@@ -2,22 +2,22 @@ package Banco;
 
 public class Cuenta {
     
-    private Integer id;
+    private Integer idCuenta;
     private Boolean status;
     private Float balance;
-
-    public Cuenta(Integer id, Boolean status, Float balance) {
-        
-        this.id = id;
-        this.status = status;
-        this.balance = balance;
-    }
 
     public Cuenta(){
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public Cuenta(Integer idCuenta, Boolean status, Float balance) {
+        
+        this.idCuenta = idCuenta;
+        this.status = status;
+        this.balance = balance;
+    }
+
+    public void setidCuenta(Integer idCuenta) {
+        this.idCuenta = idCuenta;
     }
 
     public void setStatus(Boolean status) {
@@ -28,8 +28,8 @@ public class Cuenta {
         this.balance = balance;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getIdCuenta() {
+        return idCuenta;
     }
 
     public Boolean getStatus() {
@@ -39,4 +39,15 @@ public class Cuenta {
     public Float getBalance() {
         return balance;
     }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " idCuenta='" + getIdCuenta() + "'" +
+            ", status='" + getStatus() + "'" +
+            ", balance='" + getBalance() + "'" +
+            "}";
+    }
+
 }

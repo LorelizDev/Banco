@@ -1,35 +1,35 @@
 package Banco;
 
+import java.time.LocalDate;
+
 public class Estudiante extends Cliente {
+    
+    private Cuenta cuenta;
     private Float balance;
 
     public Estudiante() {
     }
 
-    public Estudiante(Integer id, String nombreCompleto, String telefono, String email, String fechaDeAlta, Cuenta[] cuentas, Float balance) {
+    public Estudiante(Long idCliente, String nombreCompleto, String telefono, String email, LocalDate fechaDeAlta, Cuenta cuenta) {
         
-        super(id, nombreCompleto, telefono, email, fechaDeAlta, cuentas);
-        this.balance = balance;
+        super(idCliente, nombreCompleto, telefono, email, fechaDeAlta);
+        this.cuenta = cuenta;
+    }
+
+    public Cuenta getCuenta() {
+        return this.cuenta;
+    }
+
+    public void setCuenta(Cuenta cuenta) {
+        this.cuenta = cuenta;
+    }
+
+    public float calculoDeBalance() {
+        return this.balance;
     }
 
     public void setBalance(Float balance) {
         this.balance = balance;
     }
 
-    public Float getBalance() {
-        return balance;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", nombreCompleto='" + getNombreCompleto() + "'" +
-            ", telefono='" + getTelefono() + "'" +
-            ", email='" + getEmail() + "'" +
-            ", fechaDeAlta='" + getFechaDeAlta() + "'" +
-            ", cuentas='" + getCuentas() + "'" +
-            ", balance='" + getBalance() + "'" +
-            "}";
-    }  
 }

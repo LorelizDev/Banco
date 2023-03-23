@@ -1,43 +1,51 @@
 package Banco;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("\n--------Cartera de clientes--------\n");
+        
+        ArrayList<Cliente> clientes = new ArrayList<>();
 
         System.out.println("\n--------Cliente 1--------\n");
 
-        Cliente clienteA1 = new ClienteA(1, "José Pérez", "1123456789", "joseperez@gmail.com", "05-02-2022", null, 2500f, null);
+        LocalDate fecha1 = LocalDate.of(2022, 04, 15);
 
-        Cuenta cuentaAhorroA1 = new Cuenta(1, true, 5000f);
-        Cuenta cuentaCorrienteA1 = new Cuenta(2, true, 2000f);
-        Cuenta[] cuentasA1 = {cuentaAhorroA1, cuentaCorrienteA1};
-        ((Cliente) clienteA1).setCuentas(cuentasA1);
-        
-        ((ClienteA) clienteA1).calculoDePrestamo();
+        Cuenta cuenta1 = new Cuenta(1, true, 500.0f);
+        Cuenta cuenta2 = new Cuenta(2, true, 350.0f);
+        Prestamo prestamo1 = new Prestamo(1, 2000f);
 
-        System.out.println(clienteA1.toString());
+        Prestamo[] prestamos1 = {prestamo1};
+        Cuenta[] cuentas1 = {cuenta1, cuenta2};
+
+        ClienteA ClienteA1 = new ClienteA(1l, "Ricardo Gómez", "12345678", "ricardo@gmail.com ", fecha1, cuentas1, 2000.0f, prestamos1);
+
+        System.out.println("El balance total de cuentas del cliente es: " + ClienteA1.calculoDeBalance());
+        System.out.println("El prestamo al que el cliente puede aplicar es de: " + ClienteA1.calculoDePrestamo());
+
+        clientes.add(ClienteA1);
 
         System.out.println("\n--------Cliente 2--------\n");
 
-        Cliente clienteB1 = new ClienteB(2, "Juan López", "1167892345", "juanlopez@gmail.com", "15-03-2022", null, 1200f, null);
+        LocalDate fecha2 = LocalDate.of(2021, 05, 30);
 
-        Cuenta cuentaAhorroB1 = new Cuenta(3, true, 1000f);
-        Cuenta cuentaCorrienteB1 = new Cuenta(4, true, 100f);
-        Cuenta[] cuentasB1 = {cuentaAhorroB1, cuentaCorrienteB1};
-        ((Cliente) clienteB1).setCuentas(cuentasB1);
-        
-        ((ClienteB) clienteB1).calculoDePrestamo();
+        Cuenta cuenta3 = new Cuenta(1, true, 350.0f);
+        Cuenta cuenta4 = new Cuenta(2, true, 550.0f);
+        Prestamo prestamo2 = new Prestamo(1, 5000f);
 
-        System.out.println(clienteB1.toString());
+        Prestamo[] prestamos2 = {prestamo2};
+        Cuenta[] cuentas2 = {cuenta3, cuenta4};
 
-        System.out.println("\n--------Cliente 3--------\n");
+        ClienteB ClienteB1 = new ClienteB(2l, "Pedro Pérez", "56781234", "pedro@gmail.com ", fecha2, cuentas2, 1000.0f, prestamos2);
 
-        Cliente clienteE1 = new Estudiante(3, "María Casas", "1167891234", "mariacasas@gmail.com", "05-03-2023", null, 10f);
+        System.out.println("El balance total de cuentas del cliente es: " + ClienteB1.calculoDeBalance());
+        System.out.println("El prestamo al que el cliente puede aplicar es de: " + ClienteB1.calculoDePrestamo());
 
-        Cuenta cuentaAhorroE = new Cuenta(5, true, 10f);
-        Cuenta[] cuentasE1 = {cuentaAhorroE};
-        ((Cliente) clienteE1).setCuentas(cuentasE1);
+        clientes.add(ClienteB1);
 
-        System.out.println(clienteE1.toString());
+        System.out.println("\n--------Cartera de clientes--------\n");
+
+        System.out.println(clientes);
     }
 }

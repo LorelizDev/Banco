@@ -35,7 +35,6 @@ Los objetos del tipo cuenta, poseen los atributos:
 Los objetos del tipo prestamo, poseen los atributos:
 
 	* Identificador (Integer)
-	* Total (Float)
 	* Saldo (Float)
 
 En los clientes A y B implementar una interface, llamada "ClienteService" para 
