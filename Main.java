@@ -3,6 +3,7 @@ package Banco;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -72,13 +73,20 @@ public class Main {
 
         System.out.println("\n--------Eliminar un Cliente--------\n");
         
-        Long idBuscado = 3l;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el id que desea eliminar: ");
+        Long idBuscado = sc.nextLong();
+        
+
         for (int i = 0; i < clientes.size(); i++) {
             if (idBuscado == clientes.get(i).getIdCliente()) {
                 clientes.remove(i);
             }
         }
-      
+
+        sc.close();
+
+        System.out.println(clientes);
         
     }
     
@@ -102,8 +110,4 @@ public class Main {
             return new ClienteB(idCliente, nombreCompleto, telefono, email, fechaDeAlta, cuentas, ingresoMensual, prestamos);
         }
     }
-
-
-    
-
 }

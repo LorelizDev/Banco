@@ -10,3 +10,10 @@ git commit -m "Adición del README": 3er commit;
 git rm consigna.txt: para eliminar el archivo consigna;
 git add .
 git commit -m "Eliminando archivo consigna.txt": 4to commit;
+git branch feature/Banco-01: creacion de rama feature/Banco-01;
+git checkout feature/Banco-01
+git add .
+git commit -m "Definición de parámetros para creación de clientes segun el tipo, implementado de eliminación de cliente según id, adición de comandosGit.txt"
+git push
+git checkout master
+git merge feature/Banco-01
