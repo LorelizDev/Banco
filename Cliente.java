@@ -116,10 +116,13 @@ public abstract class Cliente {
             ", telefono='" + getTelefono() + "'" +
             ", email='" + getEmail() + "'" +
             ", fechaDeAlta='" + getFechaDeAlta() + "'" +
+            ", antiguedad='" + calculoAntiguedad() + " meses'" +
             ", saldo en cuentas='" + calculoDeBalance() + "'" +
             ", ingresoMensual='" + getIngresoMensual() + "'" +
-            ", tipoCliente='" + getClass().getName() + "'" +
+            ", tipoCliente='" + getClass().getName().substring(6) + "'" +
             "}";
     }
+
+    public abstract float calculoDePrestamo();
 
 }

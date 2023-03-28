@@ -1,0 +1,12 @@
+git init: para inicializar el repositorio;
+git add .: para añadir todos los archivos al stage;
+git status: para ver el estado de los archivos que no han sido comiteados;
+git commit -m "Creacion de clases y objetos e implementacion de calculo de prestamos": 1er commit;
+git remote add origin https://github.com/LorelizDev/Banco.git: para crear  el repositorio remoto;
+git push: para pasar al remoto;
+git commit -m "Reordenamiento de clases, implementado con LocalDate y arrayList, modificación de calculoDePrestamo y creación de calculoDeBalance": 2do commit;
+git add README.md: para añadir el archivo readme al stage;
+git commit -m "Adición del README": 3er commit;
+git rm consigna.txt: para eliminar el archivo consigna;
+git add .
+git commit -m "Eliminando archivo consigna.txt": 4to commit;

@@ -25,11 +25,17 @@ public class Estudiante extends Cliente {
     }
 
     public float calculoDeBalance() {
+        this.balance = cuenta.getBalance();
         return this.balance;
     }
 
     public void setBalance(Float balance) {
         this.balance = balance;
+    }
+
+    @Override
+    public float calculoDePrestamo() {
+        return 0f;
     }
 
 }
